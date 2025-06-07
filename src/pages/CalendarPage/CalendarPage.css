@@ -17,6 +17,15 @@ header {
   margin-bottom: 20%;
 }
 
+.calendar-page-options {
+  display: flex;
+  gap: 10px;
+}
+
+.calendar-page-options>* {
+  flex: 1 0 0
+}
+
 @media (min-width: 450px) {
   .block-calendar-content {
     display: grid;

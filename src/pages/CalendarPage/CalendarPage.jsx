@@ -3,7 +3,7 @@ import './CalendarPage.css';
 import nextButton from './img/next-button.svg';
 
 export const CalendarPage = () => {
-  const fields = Array.from({ length: 0 });
+  const fields = Array.from({ length: 30 });
   const options = ['happy', 'sad', 'calm', 'anxious', 'angry'];
 
   return (
@@ -21,7 +21,7 @@ export const CalendarPage = () => {
             <div class="next">
               <img src={nextButton} alt="nextButton" className="nextButton" />
             </div>
-            <div className="block-calendar-content">
+            <div className="calendar-page-options">
               {options.map((flowerId, index) => (
                 <FlowerButton flowerId={flowerId} key={index} />
               ))}
