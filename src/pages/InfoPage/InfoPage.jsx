@@ -5,14 +5,20 @@ import sad from '../HomePage/img/sad.svg';
 import anxious from '../HomePage/img/anxious.svg';
 import angry from '../HomePage/img/angry.svg';
 import './InfoPage.css';
+import { Link } from 'react-router-dom';
 
 export const InfoPage = () => {
   return (
     <div className="background">
       <div className="box">
         <div className="text-section">
-          <h1>Text zde ?</h1>
-          <p>Zakladní info</p>
+          <h1>Zahrada nálad</h1>
+          <p>
+            Každý den si vyber, jak se cítíš a sleduj, jak z tvých emocí
+            vyrůstají jedinečné květiny. Tvé pocity každý den utvářejí osobní
+            zahradu, kterou si můžeš kdykoli prohlédnout nebo se k jednotlivým
+            květinám vracet.
+          </p>
           <p>Proč to dělají, proč je to super,</p>
         </div>
         <div className="mood-list">
@@ -37,6 +43,9 @@ export const InfoPage = () => {
             <p>Naštvaný/á</p>
           </div>
         </div>
+        <Link to="/calendar" className="homepage-button-calendar">
+          Kalendář
+        </Link>
       </div>
     </div>
   );
