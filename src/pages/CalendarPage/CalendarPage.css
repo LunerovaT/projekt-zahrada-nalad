@@ -13,11 +13,18 @@ header {
   width: 100%;
 }
 
-.calendar-field {
-  aspect-ratio: 1;
-  background-color: #cde6c9;
-  border-radius: 50%;
-  cursor: pointer;
+.calendar-page-calendar {
+  margin-bottom: 20%;
+}
+
+@media (min-width: 450px) {
+  .block-calendar-content {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+  }
 }
 
 .next {
