@@ -1,9 +1,9 @@
-.block-flower-background {
+.flower-background {
   min-height: 500px;
   position: relative;
 }
 
-.block-flower-background img {
+.flower-background img {
   width: 250px;
   height: 250px;
 }
