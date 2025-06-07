@@ -35,6 +35,12 @@ html {
   background-color: rgba(210, 255, 220, 0.85);
 }
 
+.block-flower-background {
+  background-image: url('/background.svg');
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
 
 h1 {
   font-family: "Syne";
