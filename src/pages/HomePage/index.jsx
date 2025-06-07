@@ -1,5 +1,5 @@
 import './style.css';
-import backround2 from './img/backround2.svg';
+import mountain from './img/mountain.svg';
 import { Link } from 'react-router-dom';
 
 export const HomePage = () => {
@@ -9,7 +9,7 @@ export const HomePage = () => {
         <div className="page-wrapper">
           <div className="block">
             <img
-              src={backround2}
+              src={mountain}
               alt="Hlavní stránka"
               className="homepage-image"
             />
