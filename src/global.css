@@ -19,19 +19,20 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* vertikálně vystředí */
   align-items: center;
-  /* horizontálně vystředí */
   max-width: 400px;
   width: 100%;
   padding: 40px;
   margin: auto;
-
   border-radius: 10px;
-  color: white;
+  color: black;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   height: fit-content;
+}
+
+.block-alt {
+  background-color: rgba(210, 255, 220, 0.85);
 }
 
 
