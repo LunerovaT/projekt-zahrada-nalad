@@ -6,12 +6,6 @@ header {
 }
 
 .block-calendar-content {
-  background-image: url('./../../../public/backround.svg');
-  background-size: cover;
-  background-position: center;
-}
-
-.block-calendar-content {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 10px;
@@ -23,6 +17,19 @@ header {
   aspect-ratio: 1;
   background-color: #cde6c9;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.next {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 15px;
+}
+
+.nextButton {
+  max-width: 40px;
+  display: flex;
   cursor: pointer;
 }
 
