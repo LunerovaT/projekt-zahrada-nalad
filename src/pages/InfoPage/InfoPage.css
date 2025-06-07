@@ -1,3 +1,11 @@
+.background {
+  background-image: url("../HomePage/img/mountain.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200%;
+  min-height: 100vh;
+}
+
 .text-section {
   text-align: center;
   margin-bottom: 30px;
