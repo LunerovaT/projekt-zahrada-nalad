@@ -1,4 +1,4 @@
-import './style.css';
+import './CalendarPage.css';
 import { Link } from 'react-router-dom';
 
 export const CalendarPage = () => {
@@ -7,7 +7,9 @@ export const CalendarPage = () => {
       <main>
         <div className="page-wrapper">
           <div className="block">
-            <div className="block-calendar-content"></div>
+            <div className="block-calendar-content">
+              <p> zouška text ?? </p>
+            </div>
           </div>
         </div>
       </main>
