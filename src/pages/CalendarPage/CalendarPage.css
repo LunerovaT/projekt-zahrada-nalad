@@ -11,6 +11,20 @@ header {
   background-position: center;
 }
 
+.block-calendar-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.calendar-field {
+  aspect-ratio: 1;
+  background-color: #cde6c9;
+  border-radius: 50%;
+  cursor: pointer;
+  flex: 0 0 calc(100% / 7);
+}
 
 .homepage-button-vstupte {
   background-color: #b0d0ab;
