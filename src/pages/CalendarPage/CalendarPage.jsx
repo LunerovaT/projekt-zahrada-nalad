@@ -1,10 +1,10 @@
-import { FlowerButton } from '../components/Block/FlowerButton';
+import { FlowerButton } from '../components/FlowerButton/FlowerButton';
 import './CalendarPage.css';
 import nextButton from './img/next-button.svg';
 
 export const CalendarPage = () => {
-  const fields = Array.from({ length: 28 });
-  const options = Array.from({ length: 7 });
+  const fields = Array.from({ length: 0 });
+  const options = ['happy', 'sad', 'calm', 'anxious', 'angry'];
 
   return (
     <div className="container">
@@ -22,8 +22,8 @@ export const CalendarPage = () => {
               <img src={nextButton} alt="nextButton" className="nextButton" />
             </div>
             <div className="block-calendar-content">
-              {options.map((_, index) => (
-                <FlowerButton key={index} />
+              {options.map((flowerId, index) => (
+                <FlowerButton flowerId={flowerId} key={index} />
               ))}
             </div>
           </div>
