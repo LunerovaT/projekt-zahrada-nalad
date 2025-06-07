@@ -10,3 +10,14 @@ header {
   height: auto;
   display: block;
 }
+
+.homepage_button_vstupte {
+  background-color: #b0d0ab;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 25px;
+  cursor: pointer;
+  margin-top: 20px;
+}

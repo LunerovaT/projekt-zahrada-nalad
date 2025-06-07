@@ -6,6 +6,12 @@
 
 html {
   font-family: 'Syne';
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+
 }
 
 .page-wrapper {
@@ -13,7 +19,6 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
 }
 
 .block {
