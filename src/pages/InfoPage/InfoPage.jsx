@@ -4,7 +4,7 @@ import calm from '../HomePage/img/calm.svg';
 import sad from '../HomePage/img/sad.svg';
 import anxious from '../HomePage/img/anxious.svg';
 import angry from '../HomePage/img/angry.svg';
-import './style.css';
+import './InfoPage.css';
 
 export const InfoPage = () => {
   return (
