@@ -5,11 +5,44 @@
 }
 
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Syne';
 }
 
-.container {
-  max-width: 26rem;
-  margin-right: auto;
-  margin-left: auto;
+.page-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* vertikálně vystředí */
+  align-items: center;
+  /* horizontálně vystředí */
+  max-width: 400px;
+  width: 100%;
+  padding: 40px;
+  margin: auto;
+
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  height: fit-content;
+}
+
+
+h1 {
+  font-family: "Syne";
+  font-size: 40px;
+  text-align: center;
+  color: black;
+}
+
+p {
+  font-family: "Syne";
 }
