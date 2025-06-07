@@ -1,8 +1,8 @@
 .background {
-  background-image: url("../HomePage/img/mountain.svg");
+  background-image: linear-gradient(#ffffffaa, #ffffffaa), url("../HomePage/img/mountain.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 200%;
+  background-size: 150%;
   min-height: 100vh;
 }
 
