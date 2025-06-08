@@ -10,6 +10,7 @@ export const CalendarPage = () => {
   const fields = Array.from({ length: daysInMonth }).map(() => null);
   const [days, setDays] = useState(fields);
   const options = ['happy', 'sad', 'calm', 'anxious', 'angry'];
+
   console.log(days);
 
   return (
@@ -33,9 +34,14 @@ export const CalendarPage = () => {
                   flowerId={flowerId}
                   key={index}
                   onClick={() => {
-                    console.log(flowerId);
+                    const index = days.findIndex((day) => day === null);
+
+                    if (index === -1) {
+                      return;
+                    }
+
                     setDays((days) => {
-                      days[0] = {
+                      days[index] = {
                         flowerId: flowerId,
                         interactions: {
                           movement: false,
