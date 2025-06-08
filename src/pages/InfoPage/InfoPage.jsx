@@ -4,7 +4,6 @@ import calm from '../HomePage/img/calm.svg';
 import sad from '../HomePage/img/sad.svg';
 import anxious from '../HomePage/img/anxious.svg';
 import angry from '../HomePage/img/angry.svg';
-import mountain from '../HomePage/img/mountain.svg';
 import './InfoPage.css';
 import '../../global.css';
 import { Link } from 'react-router-dom';

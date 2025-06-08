@@ -4,6 +4,7 @@
   background-position: center;
   background-size: 200%;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .text-section {
