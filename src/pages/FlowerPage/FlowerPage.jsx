@@ -26,19 +26,15 @@ export const FlowerPage = () => {
   const [chosenDay, setChosenDay] = useState(() => {
     const data = localStorage.getItem(month);
     const days = JSON.parse(data);
-    return days[0];
+    return days[day];
   });
 
-  /*
-    useEffect(() => {
+  useEffect(() => {
+    const data = localStorage.getItem(month);
+    const days = JSON.parse(data);
+    days[day] = chosenDay;
     localStorage.setItem(month, JSON.stringify(days));
-  }, [days, month]);
-*/
-  /*
-  const handleClick = () => {
-    console.log(`Interacting with flower ${month}-${day}`);
-  };
-  */
+  }, [chosenDay, month, day]);
 
   const handleClick = (key) => {
     setChosenDay((prev) => ({
