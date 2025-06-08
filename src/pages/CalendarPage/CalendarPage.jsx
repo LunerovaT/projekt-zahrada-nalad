@@ -3,6 +3,13 @@ import './CalendarPage.css';
 import nextButton from './img/next-button.svg';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {
+  Button,
+  Calendar,
+  CalendarCell,
+  CalendarGrid,
+  Heading,
+} from 'react-aria-components';
 
 export const CalendarPage = () => {
   const thisMonthKey = '2025-06';
@@ -26,63 +33,79 @@ export const CalendarPage = () => {
 
   const navigate = useNavigate();
 
+  /*
+  if (data?.flowerId) {
+                                navigate(
+                                  `/flowerpage/${thisMonthKey}/${index}`,
+                                );
+                              }
+                                */
+
   return (
-    <div className="container">
-      <main>
-        <div className="page-wrapper">
-          <div className="block block-flower-background">
-            <div className="calendar-page-calendar">
-              <div className="block-calendar-content">
-                {days.map((day, index) => (
+    <Calendar aria-label="Kalendář květin">
+      <div className="container">
+        <main>
+          <div className="page-wrapper">
+            <div className="block block-flower-background">
+              <div className="calendar-page-calendar">
+                <header>
+                  <Button slot="previous">◀</Button>
+                  <Heading />
+                  <Button slot="next">▶</Button>
+                </header>
+                <div className="block-calendar-content">
+                  <CalendarGrid>
+                    {(date) => (
+                      <CalendarCell date={date}>
+                        {(props) =>
+                          props.isDisabled ? (
+                            ''
+                          ) : (
+                            <FlowerButton
+                              flowerId={days[date.day - 1]?.flowerId}
+                            />
+                          )
+                        }
+                      </CalendarCell>
+                    )}
+                  </CalendarGrid>
+                </div>
+              </div>
+
+              <div className="calendar-page-options">
+                {options.map((flowerId, index) => (
                   <FlowerButton
+                    flowerId={flowerId}
                     key={index}
-                    flowerId={day?.flowerId}
                     onClick={() => {
-                      const data = days[index];
-                      if (data?.flowerId) {
-                        navigate(`/flowerpage/${thisMonthKey}/${index}`);
+                      const index = days.findIndex((day) => day === null);
+
+                      if (index === -1) {
+                        return;
                       }
+
+                      setDays((days) => {
+                        days[index] = {
+                          flowerId: flowerId,
+                          interactions: {
+                            movement: false,
+                            friends: false,
+                            nature: false,
+                            sleep: false,
+                            meditation: false,
+                            therapy: false,
+                          },
+                        };
+                        return [...days];
+                      });
                     }}
                   />
                 ))}
               </div>
             </div>
-            <div className="next">
-              <img src={nextButton} alt="nextButton" className="nextButton" />
-            </div>
-            <div className="calendar-page-options">
-              {options.map((flowerId, index) => (
-                <FlowerButton
-                  flowerId={flowerId}
-                  key={index}
-                  onClick={() => {
-                    const index = days.findIndex((day) => day === null);
-
-                    if (index === -1) {
-                      return;
-                    }
-
-                    setDays((days) => {
-                      days[index] = {
-                        flowerId: flowerId,
-                        interactions: {
-                          movement: false,
-                          friends: false,
-                          nature: false,
-                          sleep: false,
-                          meditation: false,
-                          therapy: false,
-                        },
-                      };
-                      return [...days];
-                    });
-                  }}
-                />
-              ))}
-            </div>
           </div>
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </Calendar>
   );
 };

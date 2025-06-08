@@ -6,11 +6,14 @@ header {
 }
 
 .block-calendar-content {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
   padding: 10px;
   width: 100%;
+}
+
+.block-calendar-content table {
+  table-layout: fixed;
+  border-spacing: 10px;
+  width: 100%
 }
 
 .calendar-page-calendar {
@@ -24,16 +27,6 @@ header {
 
 .calendar-page-options>* {
   flex: 1 0 0
-}
-
-@media (min-width: 450px) {
-  .block-calendar-content {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    padding: 10px;
-    width: 100%;
-  }
 }
 
 .next {
