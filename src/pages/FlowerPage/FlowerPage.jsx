@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import '../../global.css';
 import { FlowerImage } from '../components/FlowerImage/FlowerImage';
@@ -9,7 +9,7 @@ import { BackButton } from '../components/BackButton/BackButton';
 
 export const FlowerPage = () => {
   const { month, day } = useParams();
-  const [isVisible, setIsVisible] = useState(true);
+  const navigate = useNavigate();
 
   const interactionLabels = {
     movement: 'Pohyb',
@@ -19,10 +19,6 @@ export const FlowerPage = () => {
     meditation: 'Meditace',
     therapy: 'Terapie',
   };
-
-  /*
-  const [interactions, setInteractions] = useState(chosenDay.interactions);
-*/
 
   const [chosenDay, setChosenDay] = useState(() => {
     const data = localStorage.getItem(month);
@@ -48,12 +44,11 @@ export const FlowerPage = () => {
   };
 
   const handleDelete = () => {
-    setIsVisible(false);
-
     const data = localStorage.getItem(month);
     const days = JSON.parse(data);
     days[day] = null;
     localStorage.setItem(month, JSON.stringify(days));
+    navigate('/calendar');
   };
 
   return (
@@ -63,7 +58,7 @@ export const FlowerPage = () => {
           <div className="block flower-background block-flower-background">
             <DeleteButton label="Smazat" onClick={handleDelete} />
             <BackButton>Zpět</BackButton>
-            {isVisible && <FlowerImage flowerId={chosenDay.flowerId} />}
+            <FlowerImage flowerId={chosenDay.flowerId} />
 
             <div className="interaction-button-field">
               {Object.entries(interactionLabels).map(([key, label]) => (

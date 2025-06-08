@@ -1,12 +1,10 @@
 import React from 'react';
 import './BackButton.css';
 import '../../../global.css';
-import { useNavigate } from 'react-router-dom';
 
-export const BackButton = ({ children }) => {
-  const navigate = useNavigate();
+export const BackButton = ({ children, onClick }) => {
   return (
-    <button className="back-button" onClick={() => navigate('/calendar')}>
+    <button className="back-button" onClick={onClick}>
       {children}
     </button>
   );
