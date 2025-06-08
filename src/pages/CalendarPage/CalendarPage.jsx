@@ -13,9 +13,7 @@ export const CalendarPage = () => {
     if (data === null) {
       return Array.from({ length: daysInMonth }).map(() => null);
     }
-
     console.log(data);
-
     return JSON.parse(data);
   });
 
