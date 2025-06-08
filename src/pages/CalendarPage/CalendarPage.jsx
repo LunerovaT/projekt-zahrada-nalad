@@ -23,11 +23,6 @@ export const CalendarPage = () => {
     localStorage.setItem(month, JSON.stringify(days));
   }, [days, month]);
 
-  /*
-useefffect co bude days ukladagt do localstorage, pod klíčem month
-
-*/
-
   const options = ['happy', 'sad', 'calm', 'anxious', 'angry'];
 
   console.log(days);
