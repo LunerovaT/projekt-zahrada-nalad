@@ -1,8 +1,8 @@
 import { FlowerButton } from '../components/FlowerButton/FlowerButton';
 import './CalendarPage.css';
 import nextButton from './img/next-button.svg';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const CalendarPage = () => {
   const month = '2025-06';
@@ -24,8 +24,9 @@ export const CalendarPage = () => {
   }, [days, month]);
 
   const options = ['happy', 'sad', 'calm', 'anxious', 'angry'];
-
   console.log(days);
+
+  const navigate = useNavigate();
 
   return (
     <div className="container">
@@ -35,7 +36,16 @@ export const CalendarPage = () => {
             <div className="calendar-page-calendar">
               <div className="block-calendar-content">
                 {days.map((day, index) => (
-                  <FlowerButton key={index} flowerId={day?.flowerId} />
+                  <FlowerButton
+                    key={index}
+                    flowerId={day?.flowerId}
+                    onClick={() => {
+                      const data = days[index];
+                      if (data?.flowerId) {
+                        navigate(`/flowerpage/${month}/${index}`);
+                      }
+                    }}
+                  />
                 ))}
               </div>
             </div>
