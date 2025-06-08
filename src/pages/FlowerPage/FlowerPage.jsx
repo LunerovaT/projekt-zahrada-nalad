@@ -49,6 +49,11 @@ export const FlowerPage = () => {
 
   const handleDelete = () => {
     setIsVisible(false);
+
+    const data = localStorage.getItem(month);
+    const days = JSON.parse(data);
+    days[day] = null;
+    localStorage.setItem(month, JSON.stringify(days));
   };
 
   return (
