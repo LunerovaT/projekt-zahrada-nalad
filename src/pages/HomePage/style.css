@@ -2,7 +2,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4rem;
 }
 
 .homepage-image {
@@ -15,11 +14,10 @@ header {
   background-color: #b0d0ab;
   color: black;
   padding: 12px 24px;
+  margin-bottom: 10%;
   border: none;
   border-radius: 6px;
   font-size: 25px;
   cursor: pointer;
-  margin-top: 2%;
-  margin-bottom: 30%;
   text-decoration: none;
 }
