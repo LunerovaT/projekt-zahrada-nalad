@@ -4,22 +4,11 @@ import '../../global.css';
 import { FlowerImage } from '../components/FlowerImage/FlowerImage';
 import { InteractionButton } from '../components/InteractionButton/InteractionButton';
 import { DeleteButton } from '../components/DeleteButton/DeleteButton';
+import { useEffect } from 'react';
 
 export const FlowerPage = () => {
   const { month, day } = useParams();
   const [isVisible, setIsVisible] = useState(true);
-
-  const chosenDay = {
-    flowerId: 'sad',
-    interactions: {
-      movement: false,
-      friends: false,
-      nature: false,
-      sleep: false,
-      meditation: false,
-      therapy: false,
-    },
-  };
 
   const interactionLabels = {
     movement: 'Pohyb',
@@ -30,8 +19,21 @@ export const FlowerPage = () => {
     therapy: 'Terapie',
   };
 
+  /*
   const [interactions, setInteractions] = useState(chosenDay.interactions);
+*/
 
+  const [chosenDay, setChosenDay] = useState(() => {
+    const data = localStorage.getItem(month);
+    const days = JSON.parse(data);
+    return days[0];
+  });
+
+  /*
+    useEffect(() => {
+    localStorage.setItem(month, JSON.stringify(days));
+  }, [days, month]);
+*/
   /*
   const handleClick = () => {
     console.log(`Interacting with flower ${month}-${day}`);
@@ -39,9 +41,12 @@ export const FlowerPage = () => {
   */
 
   const handleClick = (key) => {
-    setInteractions((prev) => ({
+    setChosenDay((prev) => ({
       ...prev,
-      [key]: !prev[key],
+      interactions: {
+        ...prev.interactions,
+        [key]: !prev.interactions[key],
+      },
     }));
   };
 
@@ -63,7 +68,7 @@ export const FlowerPage = () => {
                   key={key}
                   label={label}
                   onClick={() => handleClick(key)}
-                  active={interactions[key]}
+                  active={chosenDay.interactions[key]}
                 />
               ))}
             </div>
