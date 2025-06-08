@@ -1,0 +1,21 @@
+.interaction-button {
+  background-color: #b0d0ab;
+  color: black;
+  max-width: 120px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 25px;
+  cursor: pointer;
+  margin: 20px auto 0;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.interaction-button:hover {
+  background-color: #569d76;
+}
