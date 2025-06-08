@@ -1,5 +1,6 @@
 import React from 'react';
 import './InteractionButton.css';
+import '../../../global.css';
 
 export const InteractionButton = ({ label, onClick }) => {
   return (

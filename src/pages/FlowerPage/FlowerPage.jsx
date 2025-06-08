@@ -18,11 +18,20 @@ export const FlowerPage = () => {
             <FlowerImage flowerId={flowerId} />
             <div className="interaction-button-field">
               <InteractionButton label="Pohyb" onClick={handleClick} />
-              <InteractionButton label="Pohyb" onClick={handleClick} />
-              <InteractionButton label="Pohyb" onClick={handleClick} />
-              <InteractionButton label="Pohyb" onClick={handleClick} />
-              <InteractionButton label="Pohyb" onClick={handleClick} />
-              <InteractionButton label="Pohyb" onClick={handleClick} />
+              <InteractionButton
+                label="Setkání s přáteli"
+                onClick={handleClick}
+              />
+              <InteractionButton
+                label="Pobyt v přírodě"
+                onClick={handleClick}
+              />
+              <InteractionButton
+                label="Kvalitní spánek"
+                onClick={handleClick}
+              />
+              <InteractionButton label="Meditace" onClick={handleClick} />
+              <InteractionButton label="Terapie" onClick={handleClick} />
             </div>
           </div>
         </div>
