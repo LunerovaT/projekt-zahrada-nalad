@@ -5,7 +5,7 @@ export const FlowerButton = ({ flowerId }) => {
   return (
     <div className="flower-button-wrapper">
       <button className="flowerButton">
-        <FlowerImage flowerId={flowerId} />
+        {flowerId ? <FlowerImage flowerId={flowerId} /> : null}
       </button>
     </div>
   );
