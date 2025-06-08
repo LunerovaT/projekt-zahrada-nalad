@@ -21,8 +21,28 @@ export const FlowerPage = () => {
     },
   };
 
+  const interactionLabels = {
+    movement: 'Pohyb',
+    friends: 'Setkání s přáteli',
+    nature: 'Pobyt v přírodě',
+    sleep: 'Kvalitní spánek',
+    meditation: 'Meditace',
+    therapy: 'Terapie',
+  };
+
+  const [interactions, setInteractions] = useState(chosenDay.interactions);
+
+  /*
   const handleClick = () => {
     console.log(`Interacting with flower ${month}-${day}`);
+  };
+  */
+
+  const handleClick = (key) => {
+    setInteractions((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
   };
 
   const handleDelete = () => {
@@ -38,21 +58,14 @@ export const FlowerPage = () => {
             {isVisible && <FlowerImage flowerId={chosenDay.flowerId} />}
 
             <div className="interaction-button-field">
-              <InteractionButton label="Pohyb" onClick={handleClick} />
-              <InteractionButton
-                label="Setkání s přáteli"
-                onClick={handleClick}
-              />
-              <InteractionButton
-                label="Pobyt v přírodě"
-                onClick={handleClick}
-              />
-              <InteractionButton
-                label="Kvalitní spánek"
-                onClick={handleClick}
-              />
-              <InteractionButton label="Meditace" onClick={handleClick} />
-              <InteractionButton label="Terapie" onClick={handleClick} />
+              {Object.entries(interactionLabels).map(([key, label]) => (
+                <InteractionButton
+                  key={key}
+                  label={label}
+                  onClick={() => handleClick(key)}
+                  active={interactions[key]}
+                />
+              ))}
             </div>
           </div>
         </div>
