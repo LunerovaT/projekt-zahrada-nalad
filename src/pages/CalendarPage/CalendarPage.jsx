@@ -5,11 +5,11 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export const CalendarPage = () => {
-  const month = '2025-06';
+  const thisMonthKey = '2025-06';
   const daysInMonth = 30;
 
   const [days, setDays] = useState(() => {
-    const data = localStorage.getItem(month);
+    const data = localStorage.getItem(thisMonthKey);
     if (data === null) {
       return Array.from({ length: daysInMonth }).map(() => null);
     }
@@ -20,8 +20,8 @@ export const CalendarPage = () => {
   });
 
   useEffect(() => {
-    localStorage.setItem(month, JSON.stringify(days));
-  }, [days, month]);
+    localStorage.setItem(thisMonthKey, JSON.stringify(days));
+  }, [days, thisMonthKey]);
 
   const options = ['happy', 'sad', 'calm', 'anxious', 'angry'];
   console.log(days);
@@ -42,7 +42,7 @@ export const CalendarPage = () => {
                     onClick={() => {
                       const data = days[index];
                       if (data?.flowerId) {
-                        navigate(`/flowerpage/${month}/${index}`);
+                        navigate(`/flowerpage/${thisMonthKey}/${index}`);
                       }
                     }}
                   />
