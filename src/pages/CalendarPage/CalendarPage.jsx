@@ -7,8 +7,16 @@ export const CalendarPage = () => {
   const month = '2025-06';
   const daysInMonth = 30;
 
-  const fields = Array.from({ length: daysInMonth }).map(() => null);
-  const [days, setDays] = useState(fields);
+  const [days, setDays] = useState(() => {
+    const data = localStorage.getItem(month);
+    if (data === null) {
+      return Array.from({ length: daysInMonth }).map(() => null);
+    }
+
+    console.log(data);
+
+    return fields;
+  });
   const options = ['happy', 'sad', 'calm', 'anxious', 'angry'];
 
   console.log(days);
