@@ -2,6 +2,7 @@ import { FlowerButton } from '../components/FlowerButton/FlowerButton';
 import './CalendarPage.css';
 import nextButton from './img/next-button.svg';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 export const CalendarPage = () => {
   const month = '2025-06';
@@ -15,8 +16,18 @@ export const CalendarPage = () => {
 
     console.log(data);
 
-    return fields;
+    return JSON.parse(data);
   });
+
+  useEffect(() => {
+    localStorage.setItem(month, JSON.stringify(days));
+  }, [days, month]);
+
+  /*
+useefffect co bude days ukladagt do localstorage, pod klíčem month
+
+*/
+
   const options = ['happy', 'sad', 'calm', 'anxious', 'angry'];
 
   console.log(days);
