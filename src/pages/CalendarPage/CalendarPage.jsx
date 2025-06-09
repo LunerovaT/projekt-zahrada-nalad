@@ -57,7 +57,7 @@ export const CalendarPage = () => {
             <div className="block block-flower-background">
               <div className="calendar-page-calendar">
                 <header>
-                  <div class="next">
+                  <div className="next">
                     <Button slot="previous">
                       <img src={previousButton} alt="Předchozí" />
                     </Button>

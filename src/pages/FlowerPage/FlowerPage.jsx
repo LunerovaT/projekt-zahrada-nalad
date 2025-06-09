@@ -57,7 +57,7 @@ export const FlowerPage = () => {
         <div className="page-wrapper">
           <div className="block flower-background block-flower-background">
             <DeleteButton label="Smazat" onClick={handleDelete} />
-            <BackButton>Zpět</BackButton>
+            <BackButton onClick={() => navigate('/calendar')}>Zpět</BackButton>
             <FlowerImage flowerId={chosenDay.flowerId} />
 
             <div className="interaction-button-field">
