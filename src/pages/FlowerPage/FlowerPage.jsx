@@ -6,6 +6,7 @@ import { InteractionButton } from '../components/InteractionButton/InteractionBu
 import { DeleteButton } from '../components/DeleteButton/DeleteButton';
 import { useEffect } from 'react';
 import { BackButton } from '../components/BackButton/BackButton';
+import { ButterflyAnimation } from '../Butterfly/Butterfly';
 
 export const FlowerPage = () => {
   const { month, day } = useParams();
@@ -58,8 +59,13 @@ export const FlowerPage = () => {
           <div className="block flower-background block-flower-background">
             <DeleteButton label="Smazat" onClick={handleDelete} />
             <BackButton onClick={() => navigate('/calendar')}>Zpět</BackButton>
-            <FlowerImage flowerId={chosenDay.flowerId} />
+            <div className="flower-and-butterfly">
+              <FlowerImage flowerId={chosenDay.flowerId} />
 
+              {Object.values(chosenDay.interactions).some((val) => val) && (
+                <ButterflyAnimation />
+              )}
+            </div>
             <div className="interaction-button-field">
               {Object.entries(interactionLabels).map(([key, label]) => (
                 <InteractionButton

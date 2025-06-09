@@ -77,6 +77,9 @@ export const CalendarPage = () => {
                           ) : (
                             <FlowerButton
                               flowerId={days[date.day - 1]?.flowerId}
+                              hasButterfly={Object.values(
+                                days[date.day - 1]?.interactions || {},
+                              ).some(Boolean)}
                             />
                           )
                         }

@@ -1,0 +1,14 @@
+.flower-and-butterfly {
+  position: relative;
+  display: inline-block;
+}
+
+.butterfly-animation {
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  width: 200px;
+  height: 100px;
+  pointer-events: none;
+  z-index: 10;
+}
