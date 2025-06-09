@@ -62,8 +62,15 @@ export const FlowerPage = () => {
             <div className="flower-and-butterfly">
               <FlowerImage flowerId={chosenDay.flowerId} />
 
-              {Object.values(chosenDay.interactions).some((val) => val) && (
-                <ButterflyAnimation />
+              {Array.from(
+                {
+                  length: Object.values(chosenDay.interactions).filter(
+                    (val) => val,
+                  ).length,
+                },
+                (_, index) => (
+                  <ButterflyAnimation key={index} index={index} />
+                ),
               )}
             </div>
             <div className="interaction-button-field">
