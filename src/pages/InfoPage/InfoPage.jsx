@@ -1,4 +1,3 @@
-import React from 'react';
 import happy from '../HomePage/img/happy.svg';
 import calm from '../HomePage/img/calm.svg';
 import sad from '../HomePage/img/sad.svg';
