@@ -20,8 +20,8 @@ export const InfoPage = () => {
               které se můžeš vracet.
             </p>
             <p>
-              Aplikace ti pomáhá vnímat a přijímat emoce skrze vizuální mapu
-              nálad. Podporuje všímavost, sebepoznání a péči o duševní pohodu.
+              Květiny se mění podle toho, jak o sebe během dne pečuješ a rostou
+              s tebou.
             </p>
           </div>
           <div className="mood-list">
