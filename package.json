@@ -3,13 +3,17 @@
   "version": "1.1.0",
   "description": "Starter kit for React JavaScript project",
   "type": "module",
+  "homepage": "https://lunerovat.github.io/projekt-zahrada-nalad",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@internationalized/date": "^3.8.2",
+    "gh-pages": "^6.3.0",
     "react": "^19.1.0",
     "react-aria-components": "^1.10.0",
     "react-dom": "^19.1.0",
